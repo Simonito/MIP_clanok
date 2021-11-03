@@ -39,20 +39,42 @@
 
 
 \section{Úvod}
-Pojem softvérové inžinierstvo môže byť chápaný ako uplatňovanie metód, postupov a nástrojov na riadenie a vývoj počítačových systémov \cite{1985} . Ide o komplexný postup, na ktorom sa zúčastňuje mnoho odborníkov z rôznych oblastí, ako napríklad projektový manažér, team líder, softvérový developer, tester, UI dizajnér a mnoho ďalších. Časť ich práce je možno automatizovať či uľahčiť využitím nástrojov CASE. Tieto nástroje sú špeciálne vyvinuté pre podporu vývoja softvéru, automatizujú proces vývoja. Cieľom ich implementácie je skrátenie času a nákladov pri vývoji softvéru a zvýšenie jeho kvality \cite{Osama:Adoption} .
+Pojem softvérové inžinierstvo môže byť chápaný ako uplatňovanie metód, postupov a nástrojov na riadenie a vývoj počítačových systémov \cite{1985}. Ide o komplexný postup, na ktorom sa zúčastňuje mnoho odborníkov z rôznych oblastí, ako napríklad projektový manažér, team líder, softvérový developer, tester, UI dizajnér a mnoho ďalších. Časť ich práce je možno automatizovať či uľahčiť využitím nástrojov CASE. Tieto nástroje sú špeciálne vyvinuté pre podporu vývoja softvéru, automatizujú proces vývoja. Cieľom ich implementácie je ušetrenie času a nákladov pri vývoji softvéru a zvýšenie jeho kvality \cite{Osama:Adoption}.
+
+Využitie nástrojov CASE a ich klasifikácia sú uvedené v časti \ref{typy CASE}. V tejto časti je popísané delenie podľa toho, ktorú časť tzv. životného cyklu vývoja softvéru (Software Development Life Cycle, ďalej len SDLC) pomájhajú automatizovať. 
+V časti \ref{forward vs reverse} sa čitateľ zoznámi s pojmom \emph{reverzné inžinierstvo}. Nachádza sa tu prehľad, v ktorom je popísaný rozdiel medzi tzv. \emph{forward} (dopredným) a \emph{reverse} (spätným) inžinierstvom. 
+Samotným nástrojom, ich predstaveniu a následnému porovnaniu sa venujú časti \ref{predstavenie} a \ref{porovnanie}.
+Záverečné hodnotenie týchto nástrojov prináša časť \ref{zhrnutie}.
 
 
 
+\section{klasifikácia nástrojov CASE a sféry použitia}\label{typy CASE}
 
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
+Nástroje CASE sú odpoveďou na stále sa narastujúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Podporujú vývoj softvéru a dajú sa aplikovať v niektorých, niekedy vo všetkých fázach SDLC, ktorého podpora je čoraz žiadúcejšia. Náklady na vývoj softvéru každým rokom vzrastajú a preto čo i len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory.  Sú cielené na riešenie ťažkostí pri vývoji vysokokvalitného a komplexného softvéru načas a v súlade s rozpočtom \cite{2001}.
+\subsection{Klasifikácia nástrojov CASE}\label{klasifikácia}
+Ako sa vyššie spomína, nástroje CASE slúžia na podporu rôznych fáz SDLC, prípadne dokážu automatizovať všetky z nuch. Zvyknú sa preto klasifikovať podľa toho, ktorom štádiu životného cyklu sú použité. Rozdelenie vyzerá nasledovne:
 
-Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
-Záverečné poznámky prináša časť~\ref{zaver}.
+\begin{itemize}
+\item Upper CASE nástroje
+\item Lower CASE nástroje
+\item Integrated CASE nástroje
+\end{itemize}
 
-toto je moj komentar :) Patrik
-a toto je zas moj komentár :D L
+\textbf{Upper CASE}, niekedy označované aj ako \emph{front end CASE} slúžia na podporu skorých fáz životného cyklu softvéru, napríklad pri analýze a dizajne.
+\textbf{Lower CASE}, tiež nazývané aj \emph{back end CASE} zase nachádzajú využitie pri neskorších fázach životného cyklu softvéru, najmä pri testovaní a vytváraní kódu.
+\textbf{Integrated CASE}, sú schopné pokryť obe časti SDLC \cite{1998}.
+
+
+\subsection{Sféry použitia nástrojov CASE}\label{sféry}
+\emph{//rozpracovaná kapitola, zatiaľ prázdna, neskôr pridám text.}
+
+\section{Z dopredného inžinierstva k spätnému}\label{forward vs reverse}
+
+\section{Predstavenie nástrojov}\label{predstavenie}
+
+\section{Porovnanie nástrojov}\label{porovnanie}
+
+\section{Zhrnutie} \label{zhrnutie} 
 
 \section{Nejaká časť} \label{nejaka}
 
@@ -60,7 +82,7 @@ Z obr.~\ref{f:rozhod} je všetko jasné.
 
 \begin{figure*}[tbh]
 \centering
-\includegraphics[scale=1.0]{diagram.pdf}
+%\includegraphics[scale=1.0]{diagram.pdf}
 Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
 \caption{Rozhodujúci argument.}
 \label{f:rozhod}
@@ -118,7 +140,7 @@ Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom
 
 
 
-\section{Záver} \label{zaver} % prípadne iný variant názvu
+\section{Záver} \label{záver} % prípadne iný variant názvu
 
 
 
