@@ -39,31 +39,44 @@
 
 
 \section{Úvod}
-Pojem softvérové inžinierstvo môže byť chápaný ako uplatňovanie metód, postupov a nástrojov na riadenie a vývoj počítačových systémov \cite{1985}. Ide o komplexný postup, na ktorom sa zúčastňuje mnoho odborníkov z rôznych oblastí, ako napríklad projektový manažér, team líder, softvérový developer, tester, UI dizajnér a mnoho ďalších. Časť ich práce je možno automatizovať či uľahčiť využitím nástrojov CASE. Tieto nástroje sú špeciálne vyvinuté pre podporu vývoja softvéru, automatizujú proces vývoja. Cieľom ich implementácie je ušetrenie času a nákladov pri vývoji softvéru a zvýšenie jeho kvality \cite{Osama:Adoption}.
+Pojem softvérové inžinierstvo môže byť chápaný ako uplatňovanie metód, postupov a nástrojov na riadenie a vývoj počítačových systémov~\cite{1985}. Ide o komplexný postup, na ktorom sa zúčastňuje mnoho odborníkov z rôznych oblastí, ako napríklad projektový manažér, team líder, softvérový developer, tester, UI dizajnér a mnoho ďalších. Časť ich práce je možno automatizovať či uľahčiť využitím nástrojov CASE. Tieto nástroje sú špeciálne vyvinuté pre podporu vývoja softvéru, automatizujú proces vývoja. Cieľom ich implementácie je ušetrenie času a nákladov pri vývoji softvéru a zvýšenie jeho kvality~\cite{Osama:Adoption}.
 
-Využitie nástrojov CASE a ich klasifikácia sú uvedené v časti \ref{typy CASE}. V tejto časti je popísané delenie podľa toho, ktorú časť tzv. životného cyklu vývoja softvéru (Software Development Life Cycle, ďalej len SDLC) pomájhajú automatizovať. 
-V časti \ref{forward vs reverse} sa čitateľ zoznámi s pojmom \emph{reverzné inžinierstvo}. Nachádza sa tu prehľad, v ktorom je popísaný rozdiel medzi tzv. \emph{forward} (dopredným) a \emph{reverse} (spätným) inžinierstvom. 
-Samotným nástrojom, ich predstaveniu a následnému porovnaniu sa venujú časti \ref{predstavenie} a \ref{porovnanie}.
-Záverečné hodnotenie týchto nástrojov prináša časť \ref{zhrnutie}.
+Využitie nástrojov CASE a ich klasifikácia sú uvedené v časti~\ref{typy CASE}. V tejto časti je popísané delenie podľa toho, ktorú časť tzv. životného cyklu vývoja softvéru (Software Development Life Cycle, ďalej len SDLC) pomájhajú automatizovať. 
+V časti~\ref{forward vs reverse} sa čitateľ zoznámi s pojmom \emph{reverzné inžinierstvo}. Nachádza sa tu prehľad, v ktorom je popísaný rozdiel medzi tzv. \emph{forward} (dopredným) a \emph{reverse} (spätným) inžinierstvom. 
+Samotným nástrojom, ich predstaveniu a následnému porovnaniu sa venujú časti~\ref{predstavenie}~a~\ref{porovnanie}.
+Záverečné hodnotenie týchto nástrojov prináša časť~\ref{zhrnutie}.
 
 
 
 \section{klasifikácia nástrojov CASE a sféry použitia}\label{typy CASE}
 
-Nástroje CASE sú odpoveďou na stále sa narastujúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Podporujú vývoj softvéru a dajú sa aplikovať v niektorých, niekedy vo všetkých fázach SDLC, ktorého podpora je čoraz žiadúcejšia. Náklady na vývoj softvéru každým rokom vzrastajú a preto čo i len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory.  Sú cielené na riešenie ťažkostí pri vývoji vysokokvalitného a komplexného softvéru načas a v súlade s rozpočtom \cite{2001}.
+Nástroje CASE sú odpoveďou na stále sa narastujúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Podporujú vývoj softvéru a dajú sa aplikovať v niektorých, niekedy vo všetkých fázach SDLC, ktorého podpora je čoraz žiadúcejšia. Náklady na vývoj softvéru každým rokom vzrastajú a preto čo i len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory.  Sú cielené na riešenie ťažkostí pri vývoji vysokokvalitného a komplexného softvéru načas a v súlade s rozpočtom~\cite{2001}.
 \subsection{Klasifikácia nástrojov CASE}\label{klasifikácia}
-Ako sa vyššie spomína, nástroje CASE slúžia na podporu rôznych fáz SDLC, prípadne dokážu automatizovať všetky z nuch. Zvyknú sa preto klasifikovať podľa toho, ktorom štádiu životného cyklu sú použité. Rozdelenie vyzerá nasledovne:
+Ako sa vyššie spomína, nástroje CASE slúžia na podporu rôznych fáz SDLC, prípadne dokážu automatizovať všetky z nich. Zvyknú sa preto klasifikovať podľa toho, ktoré štádium životného cyklu podporujú. Takéto rozdelenie vyzerá nasledovne:
 
 \begin{itemize}
 \item Upper CASE nástroje
 \item Lower CASE nástroje
 \item Integrated CASE nástroje
 \end{itemize}
+\textbf{Upper CASE}, niekedy označované aj ako \emph{front end CASE} slúžia na podporu skorých fáz životného cyklu softvéru, napríklad pri analýze a dizajne.\\
+\textbf{Lower CASE}, tiež nazývané aj \emph{back end CASE} zase nachádzajú využitie pri neskorších fázach životného cyklu softvéru, najmä pri testovaní a vytváraní kódu.\\
+\textbf{Integrated CASE}, sú schopné pokryť obe časti SDLC~\cite{1998}.
 
-\textbf{Upper CASE}, niekedy označované aj ako \emph{front end CASE} slúžia na podporu skorých fáz životného cyklu softvéru, napríklad pri analýze a dizajne.
-\textbf{Lower CASE}, tiež nazývané aj \emph{back end CASE} zase nachádzajú využitie pri neskorších fázach životného cyklu softvéru, najmä pri testovaní a vytváraní kódu.
-\textbf{Integrated CASE}, sú schopné pokryť obe časti SDLC \cite{1998}.
 
+Iný pohľad na kategorizáciu poskytuje autor~\cite{2017}, ktroý nespája fázy SDLC do tzv. skorých a neskorších, ale konkrétne fázy jednotlivo vymenúva a podľa toho delí nástroje CASE delí nasledovne.
+\begin{itemize}
+\item Nástroje na riadenie projektov
+\item Nástroje na analýzu a návrh
+\item Nástroje na podporu Objektovo-Orientovaného softvérového inžinierstva
+\item Nástroje na testovanie
+\item Nástroje formálnych metód
+\item Klient/Server nástroje
+\item Nástroje pre webové inžinierstvo
+\item Nástroje na opätovné inžinierstvo (Reengineering)
+\end{itemize}
+
+Pri tomto delení sa stretávame s pojmom opätovné inžinierstvo (Reengineering) a keďže v ďalších kapitolách je rozpracovaná téma reverzného inžinierstva a použitie nástrojov CASE v reverznom (spätnom) inžinierstve, je potrebné uviesť, že je rozdiel medzi spätným inžinierstvom (Reverse Engineering) a opätovným inžinierstvom (Reengineering). Síce oba pojmy odkazujú na ďalšie skúmanie alebo vývoj už hotových produktov, metódy a požadované výsledky sa výrazne líšia.  Ako~\cite{reengineering} ďalej vysvetľuje, reverzné inžinierstvo sa snaží odhaliť, ako daný systém funguje. Kdežto na druhej strane úlohou opätovného inžinierstva je zlepšenie súčasného návrhu skúmaním jeho konkrétnych aspektov. 
 
 \subsection{Sféry použitia nástrojov CASE}\label{sféry}
 \emph{//rozpracovaná kapitola, zatiaľ prázdna, neskôr pridám text.}
