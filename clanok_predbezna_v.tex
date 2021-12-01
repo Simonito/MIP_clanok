@@ -32,7 +32,7 @@
 \maketitle
 
 \begin{abstract}
-Článok sa zaoberá problematikou softvérového inžinierstva, kontkrétne ako je možné proces vývoja softvéru automatizovať pomocou nástrojov CASE - Computer-Aided Software Engineering (Počítačom podporované softvérové inžinierstvo). V práci sa uvádza klasifikácia týchto nástrojov.  Článok ďalej skúma softvérové inžinierstvo a použitie CASE nástrojov z inej perspektívy.  Na rozdiel od vnímania vývoja softvéru klasicky, teda smerom vpred (Forward Engineering) sa venuje tzv. spätnému inžinierstvu (Reverse Engineering). Tu je skúmaná kompletnosť a presnosť spätne navrhnutých UML diagramov generovaných nástrojmi CASE. Predmetom porovnania bolo celkom 8 nástrojov (z toho 6 open source a 2 komerčné). Tieto nástroje boli hodnotené na základe toho, aké typy vstupov podporujú, aké typy diagramov dokážu rekonštruovať a v akej kvalite.
+Článok sa zaoberá problematikou softvérového inžinierstva, kontkrétne ako je možné proces vývoja softvéru automatizovať pomocou nástrojov CASE - Computer-Aided Software Engineering (Počítačom podporované softvérové inžinierstvo). V práci sa uvádza klasifikácia týchto nástrojov.  Článok ďalej skúma softvérové inžinierstvo a použitie CASE nástrojov z inej perspektívy.  Na rozdiel od vnímania vývoja softvéru klasicky, teda smerom vpred (Forward Engineering) sa sústredí na tzv. spätné inžinierstvo (Reverse Engineering). Tu je skúmaná kompletnosť a presnosť spätne navrhnutých UML diagramov generovaných nástrojmi CASE. Predmetom porovnania bolo celkom 8 nástrojov (z toho 6 open source a 2 komerčné). Tieto nástroje boli hodnotené na základe toho, aké typy vstupov podporujú, aké typy diagramov dokážu rekonštruovať a v akej kvalite.
  
 \end{abstract}
 
@@ -50,7 +50,7 @@ Záverečné hodnotenie týchto nástrojov prináša časť~\ref{zhrnutie}.
 
 \section{Klasifikácia nástrojov CASE}\label{klasifikácia}
 
-Nástroje CASE sú odpoveďou na stále narastujúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Podporujú vývoj softvéru a dajú sa aplikovať v niektorých, niekedy vo všetkých fázach SDLC, ktorého podpora je čoraz žiadúcejšia. Náklady na vývoj softvéru každým rokom vzrastajú a preto čo i len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory.  Sú cielené na riešenie ťažkostí pri vývoji vysokokvalitného a komplexného softvéru načas a v súlade s rozpočtom~\cite{2001}. \\
+Nástroje CASE sú odpoveďou na stále narastujúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Podporujú vývoj softvéru a dajú sa aplikovať v niektorých, niekedy vo všetkých fázach SDLC, ktorého podpora je čoraz žiadúcejšia. Náklady na vývoj softvéru každým rokom vzrastajú, a preto čo i len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory.  Sú cielené na riešenie ťažkostí pri vývoji vysokokvalitného a komplexného softvéru načas a v súlade s rozpočtom~\cite{2001}. \\
 
 
 
@@ -62,11 +62,11 @@ Ako sa vyššie spomína, nástroje CASE slúžia na podporu rôznych fáz SDLC,
 \item Integrated CASE nástroje
 \end{itemize}
 \textbf{Upper CASE}, niekedy označované aj ako \emph{front end CASE} slúžia na podporu skorých fáz životného cyklu softvéru, napríklad pri analýze a dizajne.\\
-\textbf{Lower CASE}, tiež nazývané aj \emph{back end CASE} zase nachádzajú využitie pri neskorších fázach životného cyklu softvéru, najmä pri testovaní a vytváraní kódu.\\
+\textbf{Lower CASE}, tiež nazývané aj \emph{back end CASE} zase nachádzajú využitie v neskorších fázach životného cyklu softvéru, najmä pri testovaní a vytváraní kódu.\\
 \textbf{Integrated CASE}, sú schopné pokryť obe časti SDLC~\cite{1998}.
 
 
-Iný pohľad na kategorizáciu poskytuje autor~\cite{2017}, ktroý nespája fázy SDLC do tzv. skorých a neskorších, ale konkrétne fázy jednotlivo vymenúva a podľa toho delí nástroje CASE delí nasledovne.
+Iný pohľad na kategorizáciu poskytuje autor~\cite{2017}, ktroý nespája fázy SDLC do tzv. skorých a neskorších, ale konkrétne fázy jednotlivo vymenúva a podľa toho delí nástroje CASE nasledovne:
 \begin{itemize}
 \item Nástroje na riadenie projektov
 \item Nástroje na analýzu a návrh
@@ -78,7 +78,7 @@ Iný pohľad na kategorizáciu poskytuje autor~\cite{2017}, ktroý nespája fáz
 \item Nástroje na opätovné inžinierstvo (Reengineering)
 \end{itemize}
 
-Pri tomto delení sa stretávame s pojmom opätovné inžinierstvo (Reengineering) a keďže v ďalších kapitolách je rozpracovaná téma reverzného inžinierstva a použitie nástrojov CASE v reverznom (spätnom) inžinierstve, je potrebné uviesť, že je rozdiel medzi spätným inžinierstvom (Reverse Engineering) a opätovným inžinierstvom (Reengineering). Síce oba pojmy odkazujú na ďalšie skúmanie alebo vývoj už hotových produktov, metódy a požadované výsledky sa výrazne líšia.  Ako~\cite{reengineering} ďalej vysvetľuje, reverzné inžinierstvo sa snaží odhaliť, ako daný systém funguje. Avšak na druhej strane úlohou opätovného inžinierstva je zlepšenie súčasného návrhu skúmaním jeho konkrétnych aspektov. 
+Pri tomto delení sa stretávame s pojmom opätovné inžinierstvo (Reengineering), a keďže v ďalších kapitolách je rozpracovaná téma reverzného inžinierstva a použitie nástrojov CASE v reverznom (spätnom) inžinierstve, je potrebné uviesť, že je rozdiel medzi spätným inžinierstvom (Reverse Engineering) a opätovným inžinierstvom (Reengineering). Síce oba pojmy odkazujú na ďalšie skúmanie alebo vývoj už hotových produktov, metódy a požadované výsledky sa výrazne líšia.  Ako~\cite{reengineering} ďalej vysvetľuje, reverzné inžinierstvo sa snaží odhaliť, ako daný systém funguje. Na druhej strane, úlohou opätovného inžinierstva je zlepšenie súčasného návrhu skúmaním jeho konkrétnych aspektov. 
 
 
 \section{Z dopredného inžinierstva k spätnému}\label{forward vs reverse}
@@ -110,7 +110,7 @@ Táto sekcia popisuje nástroje, ktoré boli predmetom skúmania, realizovaného
 \section{Porovnanie nástrojov}\label{porovnanie}
 
 \section{Zhrnutie} \label{zhrnutie} 
-Tento článok sa skúmal automatizáciu SDLC pomocu nástrojov CASE. Boli uvedené dve rôzne klasifikácie, na základe ktorých možno nástroje CASE rozdeliť. Obe síce vychádzajú z jednotlivých fáz životného cyklu, no jedno delí nástroje podľa konkrétnych fáz a druhé ich zase stručnejšie delí do ranných a neskorých fáz.
+Tento článok skúmal automatizáciu SDLC pomocu nástrojov CASE. Boli uvedené dve rôzne klasifikácie, na základe ktorých možno nástroje CASE rozdeliť. Obe síce vychádzajú z jednotlivých fáz životného cyklu, no jedno delí nástroje podľa konkrétnych fáz a druhé ich zase stručnejšie delí do ranných a neskorých fáz.
 V práci je ďalej opísané tzv. \emph{dopredné} inžinierstvo a potreba zavedenia tohto prídavného mena. Neskôr je v článku popísané aj reverzné inžinierstvo a stručne uvedená potreba jeho využitia. 
 V posledných častiach sa článok zameriava na ohodnotenie nástrojov CASE v reverznom inžinierstve. Nasledujúce závery, prevzaté od~ \cite{Osman:RE}, boli vyvodené na základe toho, aké schopnosti a funkcie porovnávané nástroje mali.
 \emph{// tu pribudne zbytok zhodnotenia práce.}
