@@ -14,6 +14,19 @@
 \usepackage{cite}
 %\usepackage{times}
 
+\usepackage{xcolor}	%aby odkazy neboli zvyraznene skaredym 'boxom' ale aby boli iba farebnym pismom--
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={green!80!black},
+    urlcolor={blue!80!black}
+}%------------------------------
+
+%--- popis tabulky nad nou -------------
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+%---------------------------------------
+
 \pagestyle{myheadings}
 
 \title{Nástroje CASE a ich využitie v reverznom inžinierstve\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22 vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
@@ -96,52 +109,44 @@ Pojem dopredné \textit{(forward)} inžinierstvo reprezentuje tradičný proces 
 
 // Tu príde ešte popis reverzného inžinierstva spolu s odkazovaním sa na obrázok.
 
+
+
+\section{Predstavenie nástrojov}\label{predstavenie}
+
+Táto sekcia popisuje nástroje, ktoré boli predmetom skúmania, realizovaného autorom~\cite{Osman:RE}. Všetkých 8 posudzovaných nástrojov je uvedených v tabuľke~\ref{tabulka1}. Pri evaulácii komerčných nástrojov bola použitá verzia pre účely testovania, prípadne verzia na vzedlávacie účely.
+
 %tabulka:
 \begin{table}[h]
 \centering
 \makebox[\textwidth][c]{
-\begin{tabular}{|c|p{0.2\textwidth}|p{0.43\textwidth}|c|c|}
+\begin{tabular}{|c|p{0.2\textwidth}|c|c|c|}
 \hline
 č & nástroj CASE & informácie & Predajca & Typ Licencie\\
 \hline
-1 & Visual Paradigm 8.1 & http://www.visual-paradigm.com/ & Visual Paradigm & Komerčné\\
+1 & Visual \newline Paradigm 8.1 & \href{http://www.visual-paradigm.com/}{Visual Paradigm} & Visual Paradigm & Komerčné\\
 \hline
-2 & MagicDraw 17.0 & http://www.magicdraw.com/ & No Magic & Komerčné\\
+2 & MagicDraw 17.0 & \href{http://www.magicdraw.com/}{MagicDraw} & No Magic & Komerčné\\
 \hline
-3 & Altova Umodel 2011 & http://www.altova.com/ & Altova& Komerčné\\
+3 & Altova Umodel 2011 & \href{http://www.altova.com/}{Altova Umodel} & Altova& Komerčné\\
 \hline
-4 & Enterprise \newline Architect 8.0 & http://www.sparxsystems.com.au/ & Sprax System & Komerčné\\
+4 & Enterprise \newline Architect 8.0 & \href{http://www.sparxsystems.com.au/}{Enterprise Architect} & Sprax System & Komerčné\\
 \hline
-5 & Rational Software \newline Architect 8.0.1 & https://www.ibm.com/products\newline/rational-software-architect-designer & IBM & Komerčné\\
+5 & Rational \newline Software \newline Architect 8.0.1 & \href{https://www.ibm.com/products/rational-software-architect-designer}{Rational Software} & IBM & Komerčné\\
 \hline
-6 & MyEclipse 8.6 & https://www.genuitec.com\newline/products/myeclipse/features/ & Genuitec & Komerčné\\
+6 & MyEclipse \newline 8.6 & \href{https://www.genuitec.com/products/myeclipse/features/}{MyEclipse} & Genuitec & Komerčné\\
 \hline
-7 & StarUML 5\newline & http://staruml.sourceforge.net/ &StarUML & Open Source\\
+7 & StarUML 5\newline & \href{http://staruml.sourceforge.net/}{StarUML} &StarUML & Open Source\\
 \hline
-8 & ArgoUML & https://argouml-tigris-org.github.io/tigris/argouml/tours/ & Tigris.org & Open Source\\
+8 & ArgoUML \newline & \href{https://argouml-tigris-org.github.io/tigris/argouml/tours/}{ArgoUML} & Tigris.org & Open Source\\
 \hline
-
 \end{tabular}
 }
 \caption{Zoznam posudzovaných nástrojov (prevzaté a preložené z~\cite{Osman:RE})}
 \end{table}
 
-
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.75\textwidth]{tabulka1.png}
-\caption{Zoznam posudzovaných nástrojov (prevzaté a preložené z~\cite{Osman:RE})}
-\label{tabulka1}
-\end{figure}
-
-\section{Predstavenie nástrojov}\label{predstavenie}
-
-
-Táto sekcia popisuje nástroje, ktoré boli predmetom skúmania, realizovaného autorom~\cite{Osman:RE}. Všetkých 8 posudzovaných nástrojov je uvedených v tabuľke~\ref{tabulka1}. Pri evaulácii komerčných nástrojov bola použitá verzia pre účely testovania, prípadne verzia na vzedlávacie účely.
-
+\pagebreak
 \section{Porovnanie nástrojov}\label{porovnanie}
-
+ 
 \section{Zhrnutie} \label{zhrnutie} 
 Tento článok skúmal automatizáciu SDLC pomocu nástrojov CASE. Boli uvedené dve rôzne klasifikácie, na základe ktorých možno nástroje CASE rozdeliť. Obe síce vychádzajú z jednotlivých fáz životného cyklu, no jedno delí nástroje podľa konkrétnych fáz a druhé ich zase stručnejšie delí do ranných a neskorých fáz.
 V práci je ďalej opísané tzv. \emph{dopredné} inžinierstvo a potreba zavedenia tohto prídavného mena. Neskôr je v článku popísané aj reverzné inžinierstvo a stručne uvedená potreba jeho využitia. 
