@@ -14,11 +14,12 @@
 \usepackage{cite}
 %\usepackage{times}
 
-\usepackage{xcolor}	%aby odkazy neboli zvyraznene skaredym 'boxom' ale aby boli iba farebnym pismom--
+%aby odkazy neboli zvyraznene skaredym 'boxom' ale aby boli iba farebnym pismom-------
+\usepackage{xcolor}
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
-    citecolor={green!80!black},
+    citecolor={green!70!black},
     urlcolor={blue!80!black}
 }%------------------------------
 
@@ -37,7 +38,7 @@
 	{\small \texttt{xukus@stuba.sk}}
 	}
 
-\date{\small 6. november 2021} 
+\date{\small 9. december 2021} 
 
 
 
@@ -47,9 +48,12 @@
 
 \begin{abstract}
 Článok sa zaoberá problematikou softvérového inžinierstva, kontkrétne ako je možné proces vývoja softvéru automatizovať pomocou nástrojov CASE - Computer-Aided Software Engineering (Počítačom podporované softvérové inžinierstvo). V práci sa uvádza klasifikácia týchto nástrojov.  Článok ďalej skúma softvérové inžinierstvo a použitie CASE nástrojov z inej perspektívy.  Na rozdiel od vnímania vývoja softvéru klasicky, teda smerom vpred (Forward Engineering) sa sústredí na tzv. spätné inžinierstvo (Reverse Engineering). Tu je skúmaná kompletnosť a presnosť spätne navrhnutých UML diagramov generovaných nástrojmi CASE. Predmetom porovnania bolo celkom 8 nástrojov (z toho 6 open source a 2 komerčné). Tieto nástroje boli hodnotené na základe toho, aké typy vstupov podporujú, aké typy diagramov dokážu rekonštruovať a v akej kvalite.
- 
+ \\
+ \\
+ Kľúčové slová: nástroje CASE, softvérové inžinierstvo, reverzné inžinierstvo, UML model, modelovanie v softvérovom inžinierstve
+ \\
+ \\
 \end{abstract}
-
 
 
 \section{Úvod}
@@ -96,19 +100,28 @@ Pri tomto delení sa stretávame s pojmom opätovné inžinierstvo (Reengineerin
 
 
 \section{Z dopredného inžinierstva k spätnému}\label{forward vs reverse}
-\begin{figure}[tbh]
+
+
+Spätné inžinerstvo, ako už bolo v sekcii~\ref{klasifikácia} spomenuté, sa snaží pochopiť funkciu systému. Obr. \ref{obr_forward_reverse} ilustruje spôsob vývoja informačných systémov. Pre jednoduchosť boli použité tri fázy životného cyklu, kde prvá -  \emph{"požiadavky"} predstavuje špecifikáciu problému, druhá  - \emph{"dizajn"} zase špecifikáciu riešenia a tretia -  \emph{''implementácia"} predstavuje programovanie a testovanie požadovaného systému.
+
+
+Pojem dopredné \textit{(forward)} inžinierstvo reprezentuje tradičný proces vývoja softvéru, kedy sa postupuje od prvotných abstraktných modelov, cez dizajn až ku konečnej implementácii systému. Zavedenie názvu pre niečo tak priamočiare sa môže sa zdať zbytočné, možno aj mätúce . V našom prípade, a tiež v mnoho iných, je to však nevyhnutné pre jeho odlíšenie od spätného inžinierstva. Ako teda Obr \ref{obr_forward_reverse} ukazuje, dopredné inžinierstvo prechádza jednotlivými fázami SDLC z ľava do prava.
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.85\textwidth]{forward_reverse.jpg}
 \caption{Vybrané fázy SDLC a znázornené procesy súvisiace s dopredným a spätným inžinierstvom (prevzaté a preložené z~\cite{2010})}
 \label{obr_forward_reverse}
 \end{figure}
 
-Spätné inžinerstvo, ako už bolo v sekcii~\ref{klasifikácia} spomenuté, sa snaží pochopiť funkciu systému. Obr. \ref{obr_forward_reverse} ilustruje spôsob vývoja informačných systémov. Pre jednoduchosť boli použité tri fázy životného cyklu, kde prvá -  \emph{"požiadavky"} predstavuje špecifikáciu problému, druhá  - \emph{"dizajn"} zase špecifikáciu riešenia a tretia -  \emph{''implementácia"} predstavuje programovanie a testovanie požadovaného systému.
+Na druhej strane, spätné \textit{(reverse)} inžinierstvo postupuje opačným smerom oproti doprednému inžinierstvu, čo ilustruje Obr.  \ref{obr_forward_reverse}. 
+Reverzné inžinierstvo je proces, počas ktorého je systém (softvér) analyzovaný, výsledkom čoho je pochopenie fungovania daného systému, identifikácia komponentov, prípadne prinavrátenie stratených informácií \cite{2010}.
+Vďaka reverznému inžinierstvu je možné rekonštruovať UML diagramy, na čo je možné použiť nástroje CASE. Práve problematika generovania UML diagramov zo zdrojového kódu je ďalej popísaná v sekciách \ref{predstavenie} a \ref{porovnanie}, pre ktoré bola podkladom štúdia
+realizovaná Osmanom et al. \cite{Osman:RE}. 
 
-Pojem dopredné \textit{(forward)} inžinierstvo reprezentuje tradičný proces vývoja softvéru, kedy sa postupuje od prvotných abstraktných modelov, cez dizajn až ku konečnej implementácii systému. Zavedenie názvu pre niečo tak priamočiare sa môže sa zdať zbytočné, možno aj mätúce . V našom prípade, a tiež v mnoho iných, je to však nevyhnutné pre jeho odlíšenie od spätného inžinierstva. Ako teda Obr \ref{obr_forward_reverse} ukazuje, dopredné inžinierstvo prechádza jednotlivými fázami SDLC z ľava do prava.
+\paragraph{Udržateľnosť a etika.}
+O udržateľnosti, z hľadiska softvéru, by sa dalo povedať ako o schopnosti pretrvať. To znamená, že softvér bude v budúcnosti dostupný (napr. nová platforma). Na to je samozrejme potrebné ho udržiavať. Práve nástroje schopné reverzného inžinierstva dokážu veľmi pomôcť pri údržbe softvéru, kde pomáhajú s pochopením samotného systému. Vďaka nim je možné extrahovať štruktúru programu. 
 
-// Tu príde ešte popis reverzného inžinierstva spolu s odkazovaním sa na obrázok.
-
+Táto metóda môže byť využitá aj v kontexte etiky, pri detekcii plagiátorstva, kedy štruktúra programu môže slúžiť ako ukazovateľ príliš veľkej podobnosti (alebo zhodnosti). Pri skopírovaní cudzej práce a prezentovaní ju za svoju by bolo možné získať podobnú (prípadne rovnakú) štruktúru. Na identifikáciu plagiátorstva určite existuje veľa nástrojov, ktoré ponúkajú presnejšie výsledky, ale je zrejmé, že výsledky reverzného inžinierstva môžu slúžiť ako podnet k ďalšiemu prešetreniu.
 
 
 \section{Predstavenie nástrojov}\label{predstavenie}
@@ -119,33 +132,64 @@ Táto sekcia popisuje nástroje, ktoré boli predmetom skúmania, realizovaného
 \begin{table}[h]
 \centering
 \makebox[\textwidth][c]{
-\begin{tabular}{|c|p{0.2\textwidth}|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-č & nástroj CASE & informácie & Predajca & Typ Licencie\\
+\textbf{č} & \textbf{nástroj CASE} & \textbf{informácie} & \textbf{Predajca} & \textbf{Typ Licencie}\\
 \hline
-1 & Visual \newline Paradigm 8.1 & \href{http://www.visual-paradigm.com/}{Visual Paradigm} & Visual Paradigm & Komerčné\\
+1 & Visual Paradigm 8.1 & \href{http://www.visual-paradigm.com/}{Visual Paradigm} & Visual Paradigm & Komerčné\\
 \hline
 2 & MagicDraw 17.0 & \href{http://www.magicdraw.com/}{MagicDraw} & No Magic & Komerčné\\
 \hline
 3 & Altova Umodel 2011 & \href{http://www.altova.com/}{Altova Umodel} & Altova& Komerčné\\
 \hline
-4 & Enterprise \newline Architect 8.0 & \href{http://www.sparxsystems.com.au/}{Enterprise Architect} & Sprax System & Komerčné\\
+4 & Enterprise Architect 8.0 & \href{http://www.sparxsystems.com.au/}{Enterprise Architect} & Sprax System & Komerčné\\
 \hline
-5 & Rational \newline Software \newline Architect 8.0.1 & \href{https://www.ibm.com/products/rational-software-architect-designer}{Rational Software} & IBM & Komerčné\\
+5 & Rational Software Architect 8.0.1 & \href{https://www.ibm.com/products/rational-software-architect-designer}{Rational Software} & IBM & Komerčné\\ 
 \hline
-6 & MyEclipse \newline 8.6 & \href{https://www.genuitec.com/products/myeclipse/features/}{MyEclipse} & Genuitec & Komerčné\\
+6 & MyEclipse 8.6 & \href{https://www.genuitec.com/products/myeclipse/features/}{MyEclipse} & Genuitec & Komerčné\\
 \hline
-7 & StarUML 5\newline & \href{http://staruml.sourceforge.net/}{StarUML} &StarUML & Open Source\\
+7 & StarUML 5 & \href{http://staruml.sourceforge.net/}{StarUML} &StarUML & Open Source\\
 \hline
-8 & ArgoUML \newline & \href{https://argouml-tigris-org.github.io/tigris/argouml/tours/}{ArgoUML} & Tigris.org & Open Source\\
+8 & ArgoUML & \href{https://argouml-tigris-org.github.io/tigris/argouml/tours/}{ArgoUML} & Tigris.org & Open Source\\
 \hline
 \end{tabular}
 }
-\caption{Zoznam posudzovaných nástrojov (prevzaté a preložené z~\cite{Osman:RE})}
+\caption{Zoznam posudzovaných nástrojov (prevzaté a preložené z~\cite{Osman:RE})}\label{tabulka1}
 \end{table}
 
-\pagebreak
-\section{Porovnanie nástrojov}\label{porovnanie}
+Pri porovnávaní nástrojov boli zisťované nasledovné parametre:
+\begin{itemize}
+\item ktoré programovacie jazyky sú podporované jednotlivými nástrojmi
+\item ktoré nástroje sú schopné rekonštrukcie ktorých diagramov (diagramy balíčkov - 'package'; diagramy tried - 'class'; sekvenčné diagramy - 'sequence')
+\item či sú rekonštruované diagramy správne a úplne
+\end{itemize}
+
+%\pagebreak
+\section{Výsledky porovnania nástrojov}\label{porovnanie}
+
+V tejto sekcii sú uvedené výsledky porovnania nástrojov zo sekcie \ref{predstavenie}. Výsledky sú zhrnuté v tabuľke \ref{tabulka2}.
+
+Nástrojmi podporované programovacie jazyky sú uvedené v tabuľke \ref{tabulka2}, z ktorej je možné vyčítať, že Enterprise Architect podporuje všetky jazyky uvedené v hlavičke tabuľky. Celkovo väčšina nástrojov dokáže rekonštruovať UML modely zo súborov zdrojových kódov typu .java, .cpp, .cs. Dokonca všetky porovnávané nástroje dokážu spätne generovať modely zo zdrojových kódov napísaných v jazyku Java.
+
+V pravej časti tabuľky \ref{tabulka2} sú uvedené schopnosti nástrojov z hľadiska podporovaných typov diagramov. V tejto časti tabuľky sa vyskytujú tri rôzne znaky, ktoré predstavujú tri úrovne hodnotiacej škály. Vysvetlivky k danej škále sú nasledovné \cite{Osman:RE}:
+\begin{itemize}
+\item ``+'' - nástroj dokáže rekonštruovať daný typ diagramu aj keď s malou/malými chybami, ako napríklad nesprávne uvedenie/neuvedenie vzťahov pri diagramoch tried (agregácia a kopozícia často uvedená ako asociácia)
+
+\item ``0'' - nástroj síce dokáže rekonštruovať daný typ diagramu, ale neposkytuje všetky informácia o diagrame
+
+\item ``-'' - nástroj nie je schopný rekonštrukcie daného typu diagramu
+
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\includegraphics[width=1.2\textwidth]{tabulka_nastrojov.png}
+\caption{Zoznam podporovaných programovacích jazykov a diagramov jednotlivými nástrojmi (prevzatá a upravená od \cite{Osman:RE})}
+\label{tabulka2}
+\end{table}
+ 
+ Väčšina nástrojov je schopná spätnej rekonštrukcie diagramov balíčkov \emph{package}. Všetky porovnávané nástroje dokážu generovať diagramy tried \emph{class}, ArgoUML je však v tomto najmenej spoľahlivý, keďže nedokáže rekonštruovať vzťahy medzi triedami (iné ako dedičnosť) \cite{Osman:RE}. Čo sa týka sekvenčných diagramov, ani pri jednom z porovnávaných nástrojov sa nedá hovoriť o priamej podpore, no niektoré nástroje dokážu s malou pomocou používateľa generovať takéto diagramy.
+ 
  
 \section{Zhrnutie} \label{zhrnutie} 
 Tento článok skúmal automatizáciu SDLC pomocu nástrojov CASE. Boli uvedené dve rôzne klasifikácie, na základe ktorých možno nástroje CASE rozdeliť. Obe síce vychádzajú z jednotlivých fáz životného cyklu, no jedno delí nástroje podľa konkrétnych fáz a druhé ich zase stručnejšie delí do ranných a neskorých fáz.
