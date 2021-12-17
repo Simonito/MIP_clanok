@@ -122,12 +122,7 @@ Reverzné inžinierstvo je proces, počas ktorého je systém (softvér) analyzo
 Vďaka reverznému inžinierstvu je možné rekonštruovať UML diagramy, na čo je možné použiť nástroje CASE. Práve problematika generovania UML diagramov zo zdrojového kódu je ďalej popísaná v sekciách \ref{predstavenie} a \ref{porovnanie}, pre ktoré bola podkladom štúdia
 realizovaná Osmanom et al. \cite{Osman:RE}. 
 
-%--- reakcia na tému ``Udržateľnosť a etika'' odtialto ---
-\paragraph{Udržateľnosť a etika.} 
-O udržateľnosti, z hľadiska softvéru, by sa dalo povedať ako o schopnosti pretrvať. To znamená, že softvér bude v budúcnosti dostupný (napr. nová platforma). Na to je samozrejme potrebné ho udržiavať. Práve nástroje, schopné reverzného inžinierstva dokážu veľmi pomôcť pri údržbe softvéru, kde pomáhajú s pochopením samotného systému. Vďaka nim je možné extrahovať štruktúru programu. 
-
-Táto metóda môže byť využitá aj v kontexte etiky, pri detekcii plagiátorstva, kedy štruktúra programu môže slúžiť ako ukazovateľ príliš veľkej podobnosti (alebo zhodnosti). Pri skopírovaní cudzej práce a prezentovaní ju za svoju by bolo možné získať podobnú (prípadne rovnakú) štruktúru. Na identifikáciu plagiátorstva určite existuje veľa nástrojov, ktoré ponúkajú presnejšie výsledky, ale je zrejmé, že výsledky reverzného inžinierstva môžu slúžiť ako podnet k ďalšiemu prešetreniu.
-%--- potialto je reakcia na tému z prednášky ``udržateľnosť a etika'' ---
+%-- Tu by sa prípadne hodil odstavec s reakciou na tému ``Udržateľnosť a etika''
 
 \section{Predstavenie nástrojov}\label{predstavenie}
 
@@ -196,9 +191,17 @@ V pravej časti Tabuľky \ref{tabulka2} sú uvedené schopnosti nástrojov z hľ
  Väčšina nástrojov je schopná spätnej rekonštrukcie diagramov balíčkov \emph{(package)}. Všetky porovnávané nástroje dokážu generovať diagramy tried \emph{(class)}, ArgoUML je však v tomto najmenej spoľahlivý, keďže nedokáže rekonštruovať vzťahy medzi triedami (iné ako dedičnosť) \cite{Osman:RE}. Čo sa týka sekvenčných diagramov, ani pri jednom z porovnávaných nástrojov sa nedá hovoriť o priamej podpore, no niektoré nástroje dokážu s malou pomocou používateľa generovať takéto diagramy.
  
  \section{Reakcia na témy z prednášok}
+ %--- reakcia na tému ``Udržateľnosť a etika'' odtialto ---
+\paragraph{Udržateľnosť a etika.} 
+O udržateľnosti, z hľadiska softvéru, by sa dalo povedať ako o schopnosti pretrvať. To znamená, že softvér bude v budúcnosti dostupný (napr. nová platforma). Na to je samozrejme potrebné ho udržiavať. Práve nástroje, schopné reverzného inžinierstva dokážu veľmi pomôcť pri údržbe softvéru, kde pomáhajú s pochopením samotného systému. Vďaka nim je možné extrahovať štruktúru programu. 
+
+Táto metóda môže byť využitá aj v kontexte etiky, pri detekcii plagiátorstva, kedy štruktúra programu môže slúžiť ako ukazovateľ príliš veľkej podobnosti (alebo zhodnosti). Pri skopírovaní cudzej práce a prezentovaní ju za svoju by bolo možné získať podobnú (prípadne rovnakú) štruktúru. Na identifikáciu plagiátorstva určite existuje veľa nástrojov, ktoré ponúkajú presnejšie výsledky, ale je zrejmé, že výsledky reverzného inžinierstva môžu slúžiť ako podnet k ďalšiemu prešetreniu.
+%--- potialto je reakcia na tému z prednášky ``udržateľnosť a etika'' ---
+
+
  %--- reakcia na tému ``Technológia a ľudia'' odtialto ---
  \paragraph{Technológia a ľudia.}
-Technológia ako pojem navodzuje pocit hmotného objektu. Významovo ale môže predstavovať aj softvérové riešenie. Je dôležité vedieť technológie využívať vo svoj prospech, a teda tak aby slúžili ľuďom a nie naopak. Technológie umožňujú ľuďom pracovať efektívnejšie prostredníctvom automatizácie, ktorú im ponúkajú. Rovnako tak aj nástroje CASE ponúkajú automatizáciu v rôznych fázach SDLC. Sú odpoveďou na stále narastajúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Náklady na vývoj softvéru každým rokom narastajú, a preto už len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory. Vďaka automatizácii, ktorú ponúkaju, dokážu pomôcť pri vývoji vysokokvalitného softvéru načas a v súlade s rozpočtom.
+Technológia ako pojem navodzuje pocit hmotného objektu. Významovo ale môže predstavovať aj softvérové riešenie. Je dôležité vedieť technológie využívať vo svoj prospech, a teda tak aby slúžili ľuďom a nie naopak. Technológie umožňujú ľuďom pracovať efektívnejšie prostredníctvom automatizácie, ktorú im ponúkajú. Rovnako tak aj nástroje CASE ponúkajú automatizáciu v rôznych fázach SDLC. Sú odpoveďou na stále narastajúce nároky a zvyšujúcu sa komplexnosť počítačových systémov. Náklady na vývoj softvéru každým rokom narastajú, a preto, ako aj autor~\cite{2001} uvádza, už len skromné vylepšenia pri vývoji a automatizácii môžu znamenať veľké úspory. Vďaka automatizácii, ktorú ponúkaju, dokážu pomôcť pri vývoji vysokokvalitného softvéru načas a v súlade s rozpočtom.
  %--- potialto je reakcia na tému z prednášky ``technológia a ľudia'' ---
  
  % ---reakcia na tému ``História informatiky'' odtialto-----
@@ -216,6 +219,8 @@ Z výsledkov porovnania vyplýva, že všetky nástroje dokážu rekonštruovať
 Celkovo neboli pozorované veľke rozdiely medzi schopnosťami jednotlivých nástrojov. Všetky majú relatívne rovnaké silné a slabé stránky. Jedna slabina bola pozorovaá naprieč všetkými porovnávanými nástrojmi. Ide o nesprávne zobrazenie vzťahov medzi triedami, kde agregáciu a kompozíciu často prezentujú ako asociáciu (prípadne neprezentujú vôbec). Takýto informačný chaos môže viesť k nesprávnej interpretácii. Používatelia, ktorí chcú využívať tieto nástroje v reverznom inžinierstve by si mali byť vedomí tohoto nedostatku.
 
 Do budúcna sa odporúča zopakovať toto porovnanie, prípadne porovnať nástroje prezentované v tejto práci s inými nástrojmi, nakoľko výsledky štúdie, ktoré dosiahli Osman a Chaudron sa môžu zdať zastarané. Vďaka nim ale ich nasledovníci vedia, aké parametre treba detailne odsledovať.
+
+V závere článku možno nájsť reakcie na témy z predmetu Metódy inžinierskej práce. Témy \emph{Udržateľnosť a etika} a \emph{Technológia a ľudia} nadväzujú na článok. Pri téme \emph{Historické súvislosti} je vyjadrenie ku konkrétnej osobnosti z prednášky.
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
